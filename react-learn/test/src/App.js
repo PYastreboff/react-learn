@@ -7,6 +7,8 @@ import { faSearch, faMedkit, faUser, faQuestionCircle, faChevronDown, faKey } fr
 import Sidebar from "./Sidebar";
 import Dashboard from "./Dashboard";
 import MriView from "./MriView";
+import Help from "./Help";
+import Users from "./Users"
 
 import peopleData from "./peopleData";
 
@@ -98,6 +100,24 @@ function App() {
         
         <Sidebar setLoggedIn={setLoggedIn} setPage={setPage} page={page}  />
         <MriView setPage={setPage} currentPatient={currentPatient} />
+
+      </div>
+    );
+  } else if (page === "help") {
+    return (
+      <div className="flex-row flex">
+        
+        <Sidebar setLoggedIn={setLoggedIn} setPage={setPage} page={page}  />
+        <Help setPage={setPage}/>
+
+      </div>
+    );
+  } else if (page == "users") {
+    return (
+      <div className="flex-row flex">
+        
+        <Sidebar setLoggedIn={setLoggedIn} setPage={setPage} page={page}  />
+        <Users setPage={setPage} currentPatient={currentPatient} people={peopleData} />
 
       </div>
     );
